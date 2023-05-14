@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        body{
+            font-family: 'Russo One', sans-serif;
+            background: url(fon.jpg);
+        }
+        .osn{
+            box-shadow:
+            inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 500px;
+            width: 300px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            background: rgb(9,3,38);
+            background: linear-gradient(90deg, rgba(9,3,38,1) 0%, rgba(0,212,255,1) 100%);
+        }
+        .trash{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border:none;
+            border-radius: 10px;
+            margin-left: 1200px;
+        }
+
+        .trash1{
+            margin: auto;
+            
+        }
+        .main{
+            box-shadow: 3px 3px 106px -4px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 3px 3px 106px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 3px 3px 106px -4px rgba(0,0,0,0.75);
+            margin-top: 100px;
+            display:flex;
+            justify-content: space-around;
+            width: 1000px;
+            height: 320px;
+            background-color: blue;
+            border: crimson ;
+            border-radius: 20px;
+        }
+        span{
+            color: green;
+        }
+
+.product-wrapper {
+    margin-left: 50px;
+	display: block;
+    height: 500px;
+	width: 300px;
+	float: left;
+	transition: width .2s;
+}
+
+.product {
+    width: 250px;
+    height: 390px;
+	display: block;
+	border: 1px solid #b5e9a7;
+	border-radius: 15px;
+	position: relative;
+	background: #fff;
+	margin: 0 20px 20px 0;
+	text-decoration: none;
+	color: #0063f8;
+	z-index: 0;
+	
+}
+
+.product-photo {
+	position: relative;
+	padding-bottom: 80%;
+	overflow: hidden;
+}
+.product-photo img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-width: 70%;
+	max-height: 70%;
+	margin: auto;
+	transition: transform .4s ease-out;
+
+}
+.product:hover .product-photo img {
+	transform: scale(1.05);
+}
+
+.product p:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 4.2em;
+	height: 1.6em;
+	background: linear-gradient(to left top, #fff, rgba(255, 255, 255, 0));
+}
+.price{
+    margin: 0 auto;
+    font-size: 24px;
+    color:#ff7700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.button {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer; 
+  transition: 0.2s;
+  margin-top: auto;
+  
+}
+
+.button:hover {
+  border: 1px solid #ff6633;
+  background-color: #ff6633;
+  color: #fff;
+}
+.button1 {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #fdcf00;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #fdcf00;
+  border-radius: 4px;
+  cursor: pointer; 
+  transition: 0.2s;
+  margin-top: 20px;
+  
+}
+
+.button1:hover {
+  border: 1px solid #00ff00;
+  background-color: #00ff0d;
+  color: #fff;
+}
+.desk{
+    font-family: "CENTURY GOTHIC";
+    font-size: 12px;
+}
+dialog{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    z-index:9999
+}
+main ul {
+    display:flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-flow:wrap;
+}
+    </style>
+</head>
+<body>
+    <dialog>
+        <p>Корзина:</p>
+        <ul class="tovari"></ul>
+        <p>Общая сумма покупок: <span class="all_price"></span>₽</p>
+        <button class="button" id="close">Закрыть</button>
+        <button class="button1" id="close">Оплатить заказ</button>
+      </dialog>
+    <div style="color: rosybrown;background-color: palevioletred;"  class="trash"><img class="trash1" width="60px" src="trash.png" alt=""></div>
+    <div class="osn">
+    <h1><span style="color:aqua">Electro</span> Shop</h1></div>
+    
+    <main style="margin-top: 35px;">
+        <ul class="products clearfix">
+            <li class="product-wrapper">
+                <div class="product"><div class="product-photo">
+                    <img src="1.webp" alt="">
+                </div><p>14" Ноутбук DEXP Aquilon серебристый</p>
+                <p class="desk">
+Intel Celeron N4020;8 ГБ ОЗУ; SSD 128 ГБ</p>
+            <p class="price">21990₽</p>
+            <button onclick="insert('Dexp Aquilon','21990')" class="button">В корзину</button></div>
+            </li>
+            <li class="product-wrapper">
+                <div href="" class="product"><div class="product-photo">
+                    <img src="https://cdn.citilink.ru/MlxukpFalPAW898DF17S1Dc0CHTMhytZrExxsw2pvYI/resizing_type:fit/gravity:sm/width:1200/height:1200/plain/items/1774284_v01_b.jpg" alt="">
+                </div><p>16" Ноутбук Huawei MateBook D</p>
+                <p class="desk">Core i7 12700H; 16ГБ ОЗУ; 512ГБ SSD</p>
+            <p class="price">54990₽</p>
+            <button onclick="insert('Huawei MateBook D','54990')" class="button">В корзину</button></div>
+            </li>
+            <li class="product-wrapper">
+                <div href="" class="product"><div class="product-photo">
+                    <img src="https://c.dns-shop.ru/thumb/st4/fit/500/500/5b1c65ad930d433bafff0aafa3277e36/212bd2c455ac9c10fef02f09c0780c35344eae325281833a4ddd7e8865889f06.jpg.webp" alt="">
+                </div><p>14" Ноутбук ASUS Laptop 15 F5153</p>
+                <p class="desk">Intel Celeron N4020, RAM 4 ГБ, SSD 128 ГБ,</p>
+            <p class="price">24990₽</p>
+            <button onclick="insert('ASUS Laptop 15 F5153','24990')" class="button">В корзину</button></div>
+            </li>
+            <li class="product-wrapper">
+                <div href="" class="product"><div class="product-photo">
+                    <img src="https://c.dns-shop.ru/thumb/st4/fit/500/500/a2ded44e0afc96f066993d4194fa71ec/91904a7b1fa1dc73b529a696af00ed1e4f697d56e49205e9741f49e308ea932d.jpg.webp" alt="">
+                </div><p>15.6" Ноутбук ASUS VivoBook PRO 15</p>
+                <p class="desk">AMD Ryzen 5 5600H, RAM 16 ГБ, SSD 512 ГБ, GeForce RTX 3050</p>
+            <p class="price">69990₽</p>
+            <button onclick="insert('AMD Ryzen 5 5600H','69990')" class="button">В корзину</button></div>
+            </li>
+            <li class="product-wrapper">
+                <div href="" class="product"><div class="product-photo">
+                    <img src="https://c.dns-shop.ru/thumb/st4/fit/500/500/f72ecb44eeaddffc1d3bcb38f8c37769/f1a7454a04a7b20f04788cbe3670395adb0587515f284063340356ea994cfa76.jpg.webp" alt="">
+                </div><p>17.3" Ноутбук MSI Katana GF76 12UE</p>
+                <p class="desk">Intel Core i5-11400H, RAM 16 ГБ, SSD 512 ГБ, GeForce GTX 1650 4 ГБ</p>
+            <p class="price">76990₽</p>
+            <button onclick="insert('MSI Katana GF76','76990')" class="button">В корзину</button></div>
+            </li>
+            <li class="product-wrapper">
+                <div href="" class="product"><div class="product-photo">
+                    <img src="1.webp" alt="">
+                </div><p>13.3" Ноутбук Apple MacBook Air серый</p>
+                <p class="desk">Apple M1, RAM 8 ГБ, SSD 256 ГБ, Apple M1 7-core</p>
+            <p class="price">81990₽</p>
+            <button onclick="insert('Apple MacBook Air','81990')" class="button">В корзину</button></div>
+            </li>
+        </ul>
+        
+    </main>
+</body>
+<script>
+    var dialog = document.querySelector('dialog');
+    document.querySelector('.trash1').onclick = function() {
+      dialog.show();
+    };
+    document.querySelector('#close').onclick = function() {
+      dialog.close();
+    };
+    var count = 0
+    tovari = document.querySelector('.tovari')
+    all_price = document.querySelector('.all_price')
+    all_price.innerText=count
+    function insert(name,price){
+        tovar = document.createElement('li')
+        tovar.innerText = name + ".Цена: " + price+ "₽"
+        tovari.appendChild(tovar)
+        count+=Number(price)
+        all_price.innerText=count
+    }
+    
+</script>
+</html>
